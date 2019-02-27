@@ -52,11 +52,11 @@ second_generate_srcjar(
     expected = "to be visible",
 )
 
-second_generate_file(
+second_generate_srcjar(
     name = "gen_pkg_srcjar_another_pkg",
     package = "inanotherpkg",
     class_name = "PkgSrcjarInAnotherPackage",
-    expected = "to not be visible",
+    expected = "to be visible",
 )
 
 

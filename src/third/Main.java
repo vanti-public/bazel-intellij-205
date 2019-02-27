@@ -30,6 +30,6 @@ public class Main {
     inpkg.PkgSrcjarInSamePackage.main(args); // yes
     inpkg.sub.PkgSrcjarInSubPackage.main(args); // yes
     sup.inpkg.PkgSrcjarInSupPackage.main(args); // yes
-    inanotherpkg.PkgSrcjarInAnotherPackage.main(args); // no
+    inanotherpkg.PkgSrcjarInAnotherPackage.main(args); // yes
   }
 }
