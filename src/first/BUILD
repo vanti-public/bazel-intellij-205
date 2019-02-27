@@ -19,6 +19,20 @@ first_generate_srcjar(
     expected = "not to be visible",
 )
 
+first_generate_file(
+    name = "gen_file_pkg",
+    package = "another1",
+    class_name = "AnotherFileClassInRoot",
+    expected = "not to be visible",
+)
+
+first_generate_srcjar(
+    name = "gen_srcjar_pkg",
+    package = "another1",
+    class_name = "AnotherSrcJarClassInRoot",
+    expected = "not to be visible",
+)
+
 java_library(
     name = "first_file_lib",
     srcs = [":gen_file"],
@@ -30,6 +44,16 @@ java_library(
 )
 
 java_library(
+    name = "first_file_pkg_lib",
+    srcs = [":gen_file_pkg"]
+)
+
+java_library(
+    name = "first_srcjar_pkg_lib",
+    srcs = [":gen_srcjar_pkg"],
+)
+
+java_library(
     name = "main",
     srcs = [
         ":srcs"
@@ -37,5 +61,7 @@ java_library(
     deps = [
         ":first_srcjar_lib",
         ":first_file_lib",
+        ":first_srcjar_pkg_lib",
+        ":first_file_pkg_lib",
     ],
 )
